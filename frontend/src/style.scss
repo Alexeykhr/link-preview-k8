@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f6fa;
+}
+
+.wrap {
+  display: flex;
+  margin-top: 100px;
+  align-content: center;
+  justify-content: center;
+}
+
+#input {
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+  border: 0;
+  outline: 0;
+  font: inherit;
+  padding: 10px 20px;
+  height: 60px;
+}
