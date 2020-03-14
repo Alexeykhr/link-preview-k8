@@ -4,7 +4,8 @@
   "main": "src/index.html",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "clean": "rm -rf dist/*"
   },
   "author": "Alexey Khrushch <alexeykhr@outlook.com>",
   "license": "MIT",

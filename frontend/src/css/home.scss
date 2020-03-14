@@ -1,13 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #f5f6fa;
-}
-
 .wrap {
   margin-top: 100px;
 }
@@ -46,9 +36,3 @@ body {
   max-width: 800px;
   margin: 100px auto 0;
 }
-
-.hide {
-  display: none !important;
-}
-
-@import "css/loading";

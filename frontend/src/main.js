@@ -1,26 +1,30 @@
 'use strict'
 
-const input = document.querySelector('#input')
-const loading = document.querySelector('#loading')
+import { TIMEOUT_MS } from './config/input'
+import loading from './modules/loading'
+import input from './modules/input'
+import ws from './modules/ws'
 
-const TIMEOUT_MS = 500
 let timeout
 
-input.addEventListener('input', (evt) => {
-  loading.classList.remove('hide')
+input.el.addEventListener('input', () => {
+  if (input.isEmpty) {
+    loading.stop()
+    return
+  }
+
+  const domains = input.existsDomain
+  if (!domains) {
+    loading.stop()
+    return
+  }
+
+  loading.start()
 
   clearTimeout(timeout)
 
   timeout = setTimeout(() => {
-    fetch('/api/website?input=' + decodeURI(evt.target.value))
-      .then(() => {
-
-      })
-      .catch(() => {
-
-      })
-      .finally(() => {
-        setTimeout(() => loading.classList.add('hide'), 250)
-      })
+    ws.sendDomain(domains[0])
+    loading.stop()
   }, TIMEOUT_MS)
 })
