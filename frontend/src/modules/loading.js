@@ -1,20 +1,20 @@
 class Loading {
   constructor() {
     this.el = document.querySelector('#loading')
-    this.isHidden = this.el.classList.contains('hide')
+    this.isVisible = this.el.classList.contains('show')
   }
 
   start() {
-    if (this.isHidden) {
-      this.el.classList.remove('hide')
-      this.isHidden = false
+    if (!this.isVisible) {
+      this.el.classList.add('show')
+      this.isVisible = true
     }
   }
 
   stop() {
-    if (!this.isHidden) {
-      this.el.classList.add('hide')
-      this.isHidden = true
+    if (this.isVisible) {
+      this.el.classList.remove('show')
+      this.isVisible = false
     }
   }
 }

@@ -2,7 +2,8 @@ import input from './input'
 
 class Ws {
   constructor() {
-    this.ws = new WebSocket('ws://localhost:8080/ws/domains')
+    // TODO Current location
+    this.ws = new WebSocket('ws://localhost:8080/')
 
     this.onMessage()
   }

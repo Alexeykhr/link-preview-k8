@@ -25,6 +25,5 @@ input.el.addEventListener('input', () => {
 
   timeout = setTimeout(() => {
     ws.sendDomain(domains[0])
-    loading.stop()
   }, TIMEOUT_MS)
 })

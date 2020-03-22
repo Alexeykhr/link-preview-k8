@@ -19,6 +19,7 @@
   right: 20px;
   transform: translateY(-50%);
   pointer-events: none;
+  display: none;
 }
 
 #input {
@@ -28,7 +29,7 @@
   border: 0;
   outline: 0;
   font: inherit;
-  padding: 15px 20px;
+  padding: 15px 60px 15px 20px;
   height: 60px;
 }
 
