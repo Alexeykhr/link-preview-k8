@@ -24,6 +24,6 @@ input.el.addEventListener('input', () => {
   clearTimeout(timeout)
 
   timeout = setTimeout(() => {
-    ws.sendDomain(domains[0])
+    ws.send(domains[0])
   }, TIMEOUT_MS)
 })

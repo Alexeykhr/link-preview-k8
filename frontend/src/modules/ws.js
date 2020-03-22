@@ -8,7 +8,7 @@ class Ws {
     this.onMessage()
   }
 
-  sendDomain(domain) {
+  send(domain) {
     this.ws.send(domain)
   }
 

@@ -7,8 +7,6 @@ import (
 	"fmt"
 	"net/http"
 
-	regex "github.com/alexeykhr/link-preview-k8/websocket/helpers"
-
 	"github.com/go-redis/redis/v7"
 	"github.com/gorilla/websocket"
 	"github.com/streadway/amqp"
@@ -103,16 +101,15 @@ func (app *App) handleWs(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		msgStr := string(msg)
-		if regex.IsValidDomain(msgStr) {
+		// TODO Change Regex Domain
+		//if regex.IsValidDomain(msg) {
 			err = ch.Publish(
 				"",
 				q.Name,
 				false,
 				false,
 				amqp.Publishing{
-					ContentType: "text/plain",
-					Body:        msg,
+					Body: msg,
 				})
 
 			if err != nil {
@@ -123,7 +120,7 @@ func (app *App) handleWs(w http.ResponseWriter, r *http.Request) {
 			// TODO Check cache
 
 			// TODO Send to queue
-		}
+		//}
 	}
 }
 

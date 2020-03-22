@@ -1,6 +1,6 @@
 /**
- * A little check if the / ip domain exists
+ * Regex for extract domains
  *
  * @return {RegExp}
  */
-export const domain = new RegExp(/((?:(?:(?:\w[.\-+]?)*)\w)+)((?:(?:(?:\w[.\-+]?){0,62})\w)+)\.(\w{2,6})/)
+export const domain = new RegExp(/(^|\s)((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/gi)
